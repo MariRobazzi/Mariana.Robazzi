@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV – Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .nome-site {
+      font-family: var(--serif);
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+
+    .menu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 1000px;
+      margin: auto;
+      flex: 1;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cv-block {
+      margin-bottom: 2rem;
+    }
+
+    .cv-block h2 {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-family: var(--sans);
+    }
+
+    .cv-entry {
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-entry strong {
+      font-weight: 600;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 80%;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nome-site">Mariana Robazzi</div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Currículo</h1>
+
+    <div class="cv-block">
+      <h2>INFORMAÇÕES</h2>
+      <div class="cv-entry">
+        <strong>MARIANA ROBAZZI</strong><br>
+        mariana.robazzi@gmail.com / +55 (11) 99640-1756 / LinkedIn: www.linkedin.com/in/mariana-robazzi
+      </div>
+    </div>
+
+    <div class="cv-block">
+      <h2>EDUCAÇÃO</h2>
+      <div class="cv-entry">
+        <strong>Escola da Cidade</strong><br>
+        Bacharelado em Arquitetura e Urbanismo — 2023–2028<br>
+        São Paulo, Brasil
+      </div>
+      <div class="cv-entry">
+        <strong>Nuova Accademia di Belle Arti</strong><br>
+        Interior Design Semester Abroad Program — 2024<br>
+        Milão, Itália
+      </div>
+      <div class="cv-entry">
+        <strong>Colégio Bandeirantes</strong><br>
+        Ensino Médio e Fundamental — 2016–2022<br>
+        São Paulo, Brasil
+      </div>
+    </div>
+
+    <div class="cv-block">
+  <h2>EXPERIÊNCIAS, CURSOS E CERTIFICAÇÕES</h2>
+ </div>
+
+  <div class="cv-entry">
+    <strong>Vivência acadêmica internacional – Nuova Accademia di Belle Arti (NABA), Milano</strong><br>
+    Foco em metodologias contemporâneas de Design e Interior Design, com aprendizado junto a professores nativos e atuantes no mercado europeu. Experiência marcada pelo contato com diferentes abordagens criativas, metodologias, análise crítica de projetos e ampliação de repertório cultural e técnico em ambiente internacional e interdisciplinar.
+  </div>
+
+  <div class="cv-entry">
+    <strong>Certificado de AutoCAD – Lab Ideias</strong><br>
+  </div>
+
+  <div class="cv-entry">
+    <strong>Certificado de Desenho Técnico – Colégio Bandeirantes (BAND)</strong><br>
+    Capacitação em representação gráfica e normas técnicas.
+  </div>
+
+  <div class="cv-entry">
+    <strong>Monitora de visitas guiadas - Prospecção de novos alunos – Colégio Bandeirantes (2023–2024)</strong><br>
+    Acompanhamento e mediação em atividades culturais e educacionais, apresentação do colégio e conversa com pais.<br>
+    Competências desenvolvidas: comunicação, problem-solving e public speaking.
+  </div>
+
+  <div class="cv-entry">
+    <strong>Curso de Pintura em Porcelana – Desligue a Mente</strong><br>
+    Experimentação artística em técnicas de pintura aplicada.
+  </div>
+
+  <div class="cv-entry">
+    <strong>Certificado IELTS – Inglês nível C1</strong><br>
+    Proficiência avançada em língua inglesa.
+  </div>
+</div>
+
+    <div class="cv-block">
+      <h2>HABILIDADES TÉCNICAS</h2>
+      <div class="cv-entry">
+        <strong>Softwares:</strong> AutoCAD (avançado), SketchUp (intermediário), Revit (básico), Rhino (básico), Photoshop, Illustrator, InDesign, Ftool, QGis, render por colagem<br>
+        <strong>Linguagens:</strong> HTML e CSS<br>
+        <strong>Idiomas:</strong> Português (nativo), Inglês (avançado), Espanhol (intermediário), Italiano (intermediário)<br>
+        <strong>Formação e Competências em Design:</strong> estudo avançado em Design, com compreensão aprofundada de objetos e da História do Design pela Nuova Accademia di Belle Arti<br>
+        <strong>Formação e Competências em História da Arte:</strong> Estudo aprofundado em História, com compreensão crítica das principais correntes artísticas, seus contextos históricos e impactos na prática contemporânea do design e da arquitetura da Arte pela Nuova Accademia di Belle Arti (NABA), Milão
+      </div>
+    </div>
+
+    <div class="cv-block">
+      <h2>PROJETOS ACADÊMICOS E AUTORAIS</h2>
+      <div class="cv-entry">
+       <strong>Projeto Arquitetônicos</strong> – Desenvolvimento de análise urbana, partido arquitetônico, estrutura metálica e acessibilidade, além de maquetes físicas e digitais.
+      </div>
+      <div class="cv-entry">
+       <strong>Projeto de Design de Mobiliário (NABA – Milano)</strong> – Aplicação de metodologias contemporâneas de Design e Interior Design. Ênfase em processos criativos, análise crítica de espaços e desenvolvimento de soluções inovadoras que integram estética, funcionalidade e experiência do usuário, ampliando repertório cultural e técnico em contexto internacional.
+      </div>
+      <div class="cv-entry">
+      <strong>Projeto de Tecnologia</strong> – Ênfase em sistemas construtivos, materiais e estrutura metálica, integrando teoria e prática em soluções arquitetônicas.
+      </div>
+      <div class="cv-entry">
+        <strong>Projeto Urbano</strong> – Intervenção no Centro de São Paulo – Estudo de pedonalização e ativação cultural, com diagnósticos sociais, históricos e infraestruturais, utilizando ferramentas como QGIS.
+      </div>
+      <div class="cv-entry">
+        <strong>Projeto Digital – Portfólio Pessoal </strong>– Codificação de website autoral responsivo em HTML, CSS e GitHub Pages para apresentação de projetos acadêmicos e profissionais.
+      </div>
+      <div class="cv-entry">
+       <strong>Análise de Obras</strong> – Estudo crítico de obras arquitetônicas e artísticas, com ênfase na interpretação formal, material e espacial. Desenvolvimento de leituras que articulam contexto histórico, social e cultural, relacionando referências a soluções projetuais.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
