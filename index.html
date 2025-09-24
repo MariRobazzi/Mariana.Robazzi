@@ -1,42 +1,330 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mariana Robazzi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início – Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-container {
+      background-image: url('imagens/fundo-textura.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 6vh 0 2vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      margin-bottom: 2vh;
+    }
+
+    .intro {
+      padding: 2rem 4rem 0.5rem;
+    }
+
+    .intro h1 {
+      font-family: var(--serif);
+      font-size: 3rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--text);
+      margin-bottom: 2vh;
+    }
+
+    .envelope-container {
+      position: relative;
+      margin-top: 1vh;
+      width: 30vw;
+      max-width: 300px;
+      cursor: pointer;
+      margin-bottom: 1vh;
+    }
+
+    .envelope-container img.envelope-closed,
+    .envelope-container img.envelope-open {
+      width: 100%;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    .envelope-container img.envelope-open {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .images {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      opacity: 0;
+      transition: all 0.8s ease-in-out;
+      pointer-events: none;
+    }
+
+    .images img {
+      position: absolute;
+      object-fit: cover;
+      transition: all 0.6s ease-in-out;
+      opacity: 0;
+      border: none;
+    }
+
+    /* imagens originais */
+    .images img:nth-child(1) {
+      top: -100px;
+      left: -380px;
+      width: 160px;
+      transform: rotate(-12deg);
+      z-index: 1;
+    }
+
+    .images img:nth-child(2) {
+      top: -120px;
+      left: -160px;
+      width: 150px;
+      transform: rotate(-6deg);
+      z-index: 2;
+    }
+
+    .images img:nth-child(3) {
+      top: -140px;
+      left: 160px;
+      width: 180px;
+      transform: rotate(4deg);
+      z-index: 3;
+    }
+
+    .images img:nth-child(4) {
+      top: -60px;
+      left: 60px;
+      width: 160px;
+      transform: rotate(10deg);
+      z-index: 4;
+    }
+
+    /* novas imagens */
+    .images img:nth-child(5) {
+      top: 30px;
+      left: -240px;
+      width: 130px;
+      transform: rotate(-8deg);
+      z-index: 5;
+    }
+
+    .images img:nth-child(6) {
+      top: 50px;
+      left: 150px;
+      width: 180px;
+      transform: rotate(14deg);
+      z-index: 6;
+    }
+
+    .images img:nth-child(7) {
+      top: -220px;
+      left: 220px;
+      width: 160px;
+      transform: rotate(-6deg);
+      z-index: 7;
+    }
+
+    .envelope-container:hover img.envelope-closed {
+      opacity: 0;
+    }
+
+    .envelope-container:hover img.envelope-open {
+      opacity: 1;
+    }
+
+    .envelope-container:hover .images {
+      opacity: 1;
+    }
+
+    .envelope-container:hover .images img {
+      opacity: 1;
+    }
+
+    .envelope-caption {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-top: 0.7rem;
+      transition: color 0.5s;
+    }
+
+    .envelope-container:hover .envelope-caption {
+      color: var(--detail2);
+    }
+
+    .envelope-click {
+      text-decoration: none;
+      margin-bottom: 1vh;
+    }
+
+    footer {
+      background-color: var(--bg);
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+      padding: 1.5vh 0;
+      margin-top: 2vh;
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail2);
+      margin: 0 auto 0.3rem;
+      width: 80%;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .localizacao {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      color: var(--text);
+      position: absolute;
+      top: -2.3rem;
+      left: 0;
+      width: 80%;
+      text-align: left;
+      padding-left: 10%;
+    }
+
+    @media (max-width: 700px) {
+      .intro {
+        padding: 2rem;
+      }
+
+      .intro h1 {
+        font-size: 2rem;
+      }
+
+      .intro p {
+        font-size: 1rem;
+      }
+
+      .localizacao {
+        font-size: 0.9rem;
+        text-align: center;
+        padding-left: 0;
+        position: static;
+      }
+
+      .images img {
+        width: 40vw;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div><strong>Mariana Robazzi</strong></div>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="cv.html">CV</a>
+  </nav>
 
   <main>
-    <section class="hero">
-      <h1>welcome to my <span>portfolio</span></h1>
-      <p>Arquitetura • Design • Pesquisa</p>
-    </section>
-
-    <section id="sobre" class="section">
-      <h2>Sobre</h2>
-      <p>Escreva aqui um pequeno texto sobre você, sua formação, interesses ou abordagem de trabalho.</p>
-    </section>
-
-    <section id="contato" class="section">
-      <h2>Contato</h2>
-      <p>Você pode me encontrar pelo e-mail: <a href="mailto:seuemail@email.com">seuemail@email.com</a></p>
-    </section>
+    <div class="hero-container">
+      <div class="intro">
+        <h1>Mariana Robazzi</h1>
+        <p>Portfólio 2025</p>
+      </div>
+      <a href="projetos.html" class="envelope-click">
+        <div class="envelope-container">
+          <img src="imagens/envelope-fechado.png.png" alt="Envelope fechado" class="envelope-closed">
+          <img src="imagens/envelope-aberto.png.png" alt="Envelope aberto" class="envelope-open">
+          <div class="images">
+            <img src="imagens/projeto1.jpg" alt="Projeto 1">
+            <img src="imagens/projeto4.jpeg" alt="Projeto 2">
+            <img src="imagens/projeto3.jpeg" alt="Projeto 3">
+            <img src="imagens/mobilidade.png" alt="Projeto 4">
+            <img src="imagens/projeto2b.jpg" alt="Projeto 5">
+            <img src="imagens/projeto2c.jpg" alt="Projeto 6">
+            <img src="imagens/projeto7.jpg" alt="Projeto 7">
+          </div>
+          <div class="envelope-caption">Ver projetos</div>
+        </div>
+      </a>
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 Mariana Robazzi. Todos os direitos reservados.
+    <hr>
+    <div class="footer-content">
+      <p class="localizacao">São Paulo, Brasil</p>
+      <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+    </div>
   </footer>
 </body>
 </html>
