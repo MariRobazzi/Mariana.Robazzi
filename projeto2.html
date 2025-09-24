@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto 2 – Oficina de Habilidades</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .nome-site {
+      font-family: var(--serif);
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+
+    .menu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 1400px;
+      margin: auto;
+      flex: 1;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* AJUSTE: Imagem principal responsiva e proporcional */
+    .intro-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 3rem;
+    }
+
+    .text-block {
+      text-align: justify;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .image-text-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .image-text-row img {
+      flex: 1 1 300px;
+      max-width: 500px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .image-text-row .text-block {
+      flex: 1 1 300px;
+      margin-bottom: 0;
+    }
+
+    .double-image-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .double-image-row img {
+      flex: 1 1 48%;
+      max-width: 600px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .imagem-com-texto {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .imagem-com-texto img {
+      flex: 1 1 300px;
+      max-width: 500px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .imagem-com-texto .text-block {
+      flex: 1 1 300px;
+      margin-bottom: 0;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 80%;
+    }
+
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+
+      .image-text-row,
+      .double-image-row,
+      .imagem-com-texto {
+        flex-direction: column;
+      }
+
+      .image-text-row img,
+      .image-text-row .text-block,
+      .double-image-row img,
+      .imagem-com-texto img,
+      .imagem-com-texto .text-block {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nome-site">Mariana Robazzi</div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Oficina de Habilidades</h1>
+    <img src="imagens/projeto2a.jpg" alt="Imagem principal" class="intro-image">
+
+    <div class="text-block">
+      <h2>Conceito</h2>
+      O projeto nasce da vontade de responder a duas urgências sociais fortemente entrelaçadas: a dificuldade de inserção de pessoas em situação de vulnerabilidade no mercado de trabalho, e o descarte de resíduos urbanos na região dos Campos Elísios, que atualmente gera cerca de 365 toneladas de resíduos por mês.
+      <br><br>
+      Diante deste cenário, propomos um espaço que funciona como oficina de habilidades. A ideia central é criar oportunidades reais de autonomia e reintegração social por meio do trabalho e do cuidado.
+      A oficina se apresenta como um espaço de aprendizado e produção, voltado à recuperação e reinvenção de objetos descartados. Em vez de adotar a mentalidade de que “quebrou, vai para o lixo”, buscamos resgatar a ideia de que itens que pararam de funcionar podem ter um novo propósito. Mais do que um local de conserto, ela é pensada como um ambiente de reconstrução simbólica, onde as pessoas possam também reconstruir suas trajetórias e desenvolver competências profissionais.
+      <br><br>
+      O projeto também contempla a criação de uma creche integrada ao espaço. Essa estrutura permite que as mães possam participar ativamente das oficinas, ao mesmo tempo em que seus filhos estão em um ambiente seguro e acolhedor. Compreendendo que no Brasil existem cerca de 11 milhões de mães solo, muitas delas impedidas de trabalhar por não terem com quem deixar seus filhos. Em essência, o projeto é uma resposta arquitetônica e social que articula trabalho, cuidado e sustentabilidade, transformando o resíduo, tanto material quanto social, em potência de transformação coletiva.
+    </div>
+
+    <div class="image-text-row">
+      <img src="imagens/projeto2b.jpg" alt="Imagem complementar 1">
+      <div class="text-block">
+        <h2>Escolha do Edifício</h2>
+        O antigo Hotel Bristol foi escolhido por seu valor histórico e arquitetônico. Localizado entre as estações Luz e Júlio Prestes, em uma esquina estratégica do centro de São Paulo, o edifício carrega a memória das transformações urbanas da região, mantendo uma presença simbólica na paisagem.
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h2>Decisão de Intervenção</h2>
+      A decisão de demolir o núcleo do edifício partiu do diagnóstico de severo comprometimento estrutural. A ausência de cobertura, infiltrações constantes e o avanço da vegetação colocavam em risco a integridade da construção. Preservamos a fachada como gesto de respeito à história, mas reconfiguramos o interior para garantir segurança, funcionalidade e novos usos ao espaço.
+    </div>
+
+    <div class="text-block">
+      <h2>Proposta de Estrutura</h2>
+      A fachada original será mantida em seu estado atual, sem restauração. Ela não será reconstituída mas será tratada, sendo assim preservada como está, com todas as marcas do tempo, funcionando como testemunho da história do edifício.
+      <br><br>
+      Como a estrutura antiga está comprometida, será construído um novo edifício por dentro, com estrutura metálica independente. Essa nova estrutura garantirá a estabilidade e o funcionamento do conjunto, sem depender da fachada para sustentação.
+    </div>
+
+    <div class="imagem-com-texto">
+      <img src="imagens/projeto2c.jpg" alt="Imagem complementar 2">
+      <div class="text-block">
+        A fachada será apenas contida e travada pontualmente, por meio de elementos metálicos que a impedem de colapsar, mas sem interferência visual significativa.
+        <br><br>
+        Do interior do novo edifício, os usuários poderão ver a fachada antiga por dentro, criando um diálogo direto entre o passado exposto e a nova ocupação.
+        <br><br>
+        Essa solução respeita a integridade da pré-existência, evita sua descaracterização e garante segurança estrutural, flexibilidade de uso e clareza construtiva.
+      </div>
+    </div>
+
+    <div class="double-image-row">
+      <img src="imagens/projeto2d.jpg" alt="Imagem adicional 1">
+      <img src="imagens/projeto2e.jpg" alt="Imagem adicional 2">
+    </div>
+
+    <div class="double-image-row">
+      <img src="imagens/projeto2f.jpg" alt="Imagem adicional 3">
+      <img src="imagens/projeto2g.jpg" alt="Imagem adicional 4">
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
