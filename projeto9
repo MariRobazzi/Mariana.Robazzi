@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANÁLISE DALÍ &ndash; Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+    .logo-nome {
+      position: absolute;
+      left: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 800px;
+      margin: auto;
+      flex: 1;
+      line-height: 1.8;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    p {
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+    .projeto-img,
+    .img-small,
+    .img-smaller,
+    .img-large,
+    .imagem-com-texto img {
+      display: block;
+      margin: 3rem auto;
+      height: auto;
+    }
+    .projeto-img { width: 100%; }
+    .img-small { width: 45%; }
+    .img-smaller { width: 64%; }
+    .img-large {
+      width: 80%;
+      max-width: 900px;
+    }
+    .imagem-com-texto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      text-align: justify;
+    }
+    .imagem-com-texto img {
+      max-width: 400px;
+      width: 100%;
+    }
+    .legenda {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
+      text-align: center;
+      margin-top: -2rem;
+      margin-bottom: 3rem;
+    }
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    footer p {
+      text-align: center;
+      margin: 0;
+    }
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 60%;
+    }
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+      .img-large {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="logo-nome">Mariana Robazzi</span>
+    <a href="index.html">Início</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="cv.html">CV</a>
+  </nav>
+  <main>
+    <h1>Análise da Obra de Salvador Dalí</h1>
+    <p class="meta">Mariana Robazzi &middot; Nuova Accademia di Belle Arti &middot; Professora: Rosella Locatelli &middot; 8 dezembro 2024</p>
+<p></p>
+    <p>Salvador Dalí i Domènech was born on May 11, 1904. From an early age, Dalí demonstrated a keen awareness of his artistic talent and a growing desire to be considered a genius (Torres, 2012).</p>
+    <p>Dalí began drawing and painting portraits of his family and landscapes at the age of 10. In 1916, he discovered French Impressionism, marking the beginning of his production of his first Impressionist works (Descharnes & Néret, 2004).</p>
+    <p>In 1922, Dalí was admitted to the San Fernando Academy of Fine Arts, painting his first cubist works in 1927. Quickly advancing in his career, in November of the same year, he held his first solo exhibition at the Dalmau Galleries in Barcelona.</p>
+    <p> The year 1929 was crucial for Dalí as he met Gala. The artist became involved with Gala (figure 1) when he was 25. Dalí had a great passion for her, with Gala being a recurring figure in his dreams (Cardinali, 2019) and the protagonist in many of his works. She introduced him to surrealism, and he joined the Surrealist group in Paris, where he became a central figure of the movement. In the 1940s, Dalí's work began to approach classical themes, addressing topics such as science, religion, and history. The pursuit of eternity became a hallmark of his art, intensifying from 1946 onwards when he entered a phase associated with nuclear mysticism.</p>
+
+    <img src="imagens/Dali1.png" alt="Foto de Gala" class="img-large">
+    <p class="legenda">"Figure 1: Photo of Gala posing for Dalí; Salvador Dalí Exhibition - FAAP Museum 2024.</p>
+
+    <p>  The Surrealism movement emerged in the early 20th century, heavily influenced by Constructivism, which emphasizes the use of abstract and functional geometric forms, incorporating principles of industrial technology, and Dadaism, which aimed to reinvent art by introducing provocative and illogical elements. Surrealism, a movement driven by the artist André Breton, addresses elements of Freud's psychoanalysis, especially regarding the direct relationship between the unconscious, which is seen as an inaccessible stock of thoughts, memories, and emotions, and dreams, which are thus a materialization of these repressed desires, building the idea of art with a dreamlike quality.</p>
+
+    <img src="imagens/Dali2.png" alt="Exposição Dalí FAAP" class="img-large">
+    <p class="legenda">Figure 2: Salvador Dalí Exhibition - FAAP Museum 2024.</p>
+
+    <p>Thus, Salvador Dalí, as a surrealist artist, sought to represent his unconscious, more specifically his dreams. His works appear as photographs and attempts to materialize impossible images in real life, but plausible in a daydream. It was his habit to take naps to achieve a hypnagogic state, the transitional stage between wakefulness and sleep. </p>
+    <p>Furthermore, the technique of automatic writing can be observed in his works, which is a method in which the artist transcribes thoughts without the intervention of rational consciousness (Argan, 1992). This process results in a composition where the elements do not need to make sense when viewed together, reinforcing the surrealist character of the painting. </p>
+    <p>The artist characterizes his process as 'paranoiac-critical,' a method that is directly connected to the studies of 'paranoia' by the psychiatrist Jacques Lacan in the 1930s. According to Dalí, our mind can generate 'phantom objects,' which are images created by the unconscious. Thus, the paranoiac-critical method is based on the interpretation of messages that seek to establish connections between elements that, at first glance, do not relate to one another. Dalí claimed that just as a paranoid person sees similarities in anything before them, he perceived in his works a multitude of images derived from other images, due to his sensitivity (S.N., 2022).</p>
+    <p>At the same time, for Lacan, paranoia is a psychological phenomenon involving a distortion in the subject's relationship with reality and with others. The psychiatrist understands paranoia as a form of psychosis, characterized by the presence of delusions and the construction of a personal reality. It is linked to the structuring of the subject in the symbolic field, that is, in the realm of linguistic and social relationships that constitute the individual's identity." (Macey, 1988; Lacan, 1966)</p>
+    <p> When analyzing the works 'Madonna of Port Lligat' (figure 3), 'Landscape of Port Lligat, 1950' (figure 4), and 'The Dematerialization of Nero's Nose' (figure 5) by Salvador Dalí, they reveal an intersection between the personal, religious, and scientific elements that permeate the artist's production.</p>
+
+    <img src="imagens/projeto9.jpg" alt="Madonna of Port Lligat" class="img-large">
+    <p class="legenda">   Figure 3: Madonna of Port Lligat. Salvador Dalí (1947). Oil on canvas. 366 x 244 cm. Gala-Salvador Dalí Foundation, Figueras."</p>
+    
+    <p>In the painting 'Madonna of Port Lligat' (figure 3), the central figure is the Madonna, with a rectangular tear in her chest, framing Jesus, who also reveals his heart and holds a sphere and a small book. The scene is framed by a corrupted arch, with a shell that supports an egg. The arch reveals its stone structure and is surrounded by columns with white capitals and brown bases. A shell and a pomegranate float alongside the central figures, while a column houses a piece of raw meat. </p>
+   <p>A closer analysis indicates that the face of the Madonna is that of Gala, Dalí's wife. By portraying her as the Virgin Mary, he elevated her to a symbol of faith and purity, seeing her as his salvation and source of success (Palomar S., 2023). </p>
+  
+    
+
+    <img src="imagens/Dali4.png" alt="Landscape of Port Lligat" class="img-large">
+    <p class="legenda">Figure 4: Landscape of Portlligat. Salvador Dalí (1950). Oil on canvas. 58.5 x 78.5 cm. The Dali Museum, St. Petersburg (Florida).</p>
+
+   <p> In the second work, 'Landscape of Port Lligat,' the scene is dominated by a vast expanse of water reflecting the soft light of the sky, creating an atmosphere of tranquility and contemplation. In the background, a mountainous landscape rises under a cloudy sky, with shades of blue and green that evoke the natural beauty of the Port Lligat region. This landscape seems almost ethereal, as if it exists between reality and dream.</p>
+   <p> In the right corner of the work, one can notice representations of humans and an angel, creating an atmosphere rich in symbolism. This interaction between mortal figures and the celestial entity emphasizes, once again, the deep connection between the divine and the dreamlike universe characteristic of Salvador Dalí. </p>
+
+    <img src="imagens/Dali5.png" alt="The Dematerialization of Nero's Nose" class="img-large">
+    <p class="legenda">Figure 5: The Dematerialization of Nero's Nose. Salvador Dalí (1947). Oil on canvas. 76.4 × 46 cm. Gala-Salvador Dalí Foundation, Figueras.</p>
+
+  <p>Another painting that enriches the analysis of Dalí is 'The Dematerialization of Nero's Nose' (figure 5), which unfolds in a surreal setting. The straight, flat horizon conveys a sense of mysticism, evoking an ethereal space. In the foreground, the bust of Nero, missing its nose, is prominently featured, framed by a marble altar. The composition is further intriguing with the inclusion of a Rome divided in half, situated at the base; additionally, at the foot of the painting, there are small images that further enrich the surreal setting. Among them stands a marble statuette and the gentlemen, who seem to pay homage to the altar.
+Pieces such as the sphere adorned with a corrupted square (Figure 4) and the angels (Figure 5), which appear in other works of his, represent his personal fascinations, which can also be linked to repetition in dreams.</p>
+  <p> Thus, in a dream, these figures may be interconnected by solid, albeit illogical, relationships. This also demonstrates that the elements of the painting were not selected to form a logical and coherent sense for an observer with a rational mind, but to evoke incongruity and doubt about the reason for their being together </p>
+  <p>Furthermore, other elements make more discreet references to scientific themes, particularly nuclear physics. One example is the pomegranate, which reflects the classical atomic model of Thomson, where electrons are imagined as small seeds inside the fruit, contradicting quantum mechanics. Meanwhile, the concrete structure that surrounds the white sphere in 'The Dematerialization of Nero's Nose' from 1947 resembles a pomegranate, seeking to represent human control over the atom, illustrated by the construction and use of the nuclear bomb (Andrade; Hermano; Nascimento, 2007) </p>
+  <p> In this same theme, one can also understand an analogy between the floating objects, such as shells, angels, mountains, etc., and the structure of the atom, which has electrons that float in a sphere of positive charge (Andrade; Hermano; Nascimento, 2007). Thus, we can understand the elements presented by Dalí in the painting as part of his understanding as a person, with himself or his unconscious representing the atom.</p>
+  <p>In summary, it is understood that Salvador Dalí's works represent an internal dialogue of the author with the elements surrounding his unconscious. It is a representation of the manifest content of one of his dream experiences, that is, what a human being is capable of conveying about their dream. </p>
+  <p> When analyzing the surrealist movement, it becomes evident how it addresses human personality, the understanding of the real and the unreal, and a deeper analysis of the understanding of being, which are key concepts in Freudian and Lacanian theories. Thus, analyzing his works also entails exploring the artist and his convictions about the world and his ideals concerning the era, as well as understanding the people and fundamental elements in his critical and creative thought.</p>
+
+   <h2>Referências Bibliográficas</h2>
+<ol>
+  <li>Ades, D. (1982). <em>Dalí: Biblioteca do mundo da arte</em>. Reino Unido: Tâmsa e Hudson.</li>
+  <li>Torres, S. (2012). Crónica de uma obsessão: “Salvador Dalí e a imagem do piano”. Artigo apresentado na 2.ª Jornada da Escola de Música de U.N.R. Madrid, Espanha.</li>
+  <li>Descharnes, R., & Néret, G. (2004). <em>Dalí</em>. Madrid: Taschen.</li>
+  <li>Andrade, R., Nascimento, R., & Germano, M. (n.d.). Influências da física moderna na obra de Salvador Dalí. Departamento de Física – Universidade Estadual da Paraíba. Available at: [Accessed on: 8 Dec. 2024].</li>
+  <li>Bosse, P. (2015, 8 dez.). Salvador Dalí traz “misticismo nuclear” para Dallas – 1952. <em>Flashback</em>. Available at: <a href="https://flashbackdallas.com/2015/07/10/salvador-dali-brings-nuclear-mysticism-to-dallas-1952/" target="_blank">https://flashbackdallas.com/2015/07/10/salvador-dali-brings-nuclear-mysticism-to-dallas-1952/</a>. Accessed on: 8 Dec. 2024.</li>
+  <li>Cardinali, R. (n.d.). O surrealismo na formação do conceito de real em Lacan. Universidade de São Paulo - Instituto de Psicologia.</li>
+  <li>Dalí. (n.d.). Cultura de Massas | Museo Nacional Centro de Arte Reina Sofía. Available at: <a href="https://www.museoreinasofia.es/en/exhibitions/dali-cultura-masas" target="_blank">https://www.museoreinasofia.es/en/exhibitions/dali-cultura-masas</a>. Accessed on: 8 Dec. 2024.</li>
+  <li>Palomar, A. (2023, 8 dez.). Gala, la carismática artista más allá de Dalí. <em>História - National Geographic</em>. Available at: <a href="https://historia.nationalgeographic.com.es/a/gala-carismatica-artista-mas-alla-dali_19560" target="_blank">https://historia.nationalgeographic.com.es/a/gala-carismatica-artista-mas-alla-dali_19560</a>. Accessed on: 8 Dec. 2024.</li>
+  <li>Argan, G. C., & Bottmann, D. (2002). <em>Arte moderna: do iluminismo aos movimentos contemporâneos</em>. São Paulo: Companhia Das Letras.</li>
+  <li>Lacan, J. (n.d.). <em>Escritos</em>.</li>
+  <li>Macey, D. (1988). <em>Lacan in contexts</em>. Verso.</li>
+  <li>Neret, G. (2013). <em>Dalí: the paintings</em>. Reino Unido: Taschen.</li>
+  <li>O “misticismo nuclear” de Salvador Dalí. (n.d.). <em>Artecapital.net</em>. Available at: <a href="https://www.artecapital.net/noticia-9803-o-misticismo-nuclear-de-salvador-dali" target="_blank">https://www.artecapital.net/noticia-9803-o-misticismo-nuclear-de-salvador-dali</a>. Accessed on: 8 Dec. 2024.</li>
+</ol>
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
