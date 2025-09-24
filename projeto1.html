@@ -1,29 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto 1 – Mariana Robazzi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Esportivo – Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .logo-nome {
+      position: absolute;
+      left: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 800px;
+      margin: auto;
+      flex: 1;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Todas as imagens centralizadas */
+    .projeto-img,
+    .img-small,
+    .img-smaller,
+    .imagem-com-texto img {
+      display: block;
+      margin: 3rem auto;
+      height: auto;
+    }
+
+    .projeto-img {
+      width: 100%;
+    }
+
+    .img-small {
+      width: 45%;
+    }
+
+    .img-smaller {
+      width: 64%;
+    }
+
+    .imagem-com-texto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      text-align: justify;
+    }
+
+    .imagem-com-texto img {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer p {
+      text-align: center; /* força centralização no rodapé */
+      margin: 0;
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 60%; /* mais estreito e centralizado */
+    }
+
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div><strong>Mariana Robazzi</strong></div>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="projetos.html">Projetos</a>
-    </nav>
-  </header>
+  <nav>
+    <span class="logo-nome">Mariana Robazzi</span>
+    <a href="index.html">Início</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="cv.html">CV</a>
+  </nav>
 
   <main>
-    <h1>Projeto 1</h1>
-    <p>Descrição detalhada do projeto, com imagens, contexto, processo criativo e resultados.</p>
-    <img src="imagens/projeto1.jpg" alt="Imagem do Projeto 1" style="width:100%; max-width:600px;" />
+    <h1>Centro Esportivo Três Rios</h1>
+
+    <img src="imagens/projeto1.jpg" alt="Imagem de abertura" class="projeto-img">
+
+    <p>O projeto parte da necessidade de condensar um programa esportivo completo em um lote no bairro do Bom Retiro, em São Paulo. A solução adotada baseia-se em uma ocupação vertical, capaz de organizar usos distintos em uma estrutura compacta, articulada em torno de um elemento central: a piscina.</p>
+
+    <p>A implantação respeita o alinhamento da Rua Três Rios, estabelecendo um embasamento térreo com função de acolhimento e recepção dos usuários. A piscina, posicionada no primeiro pavimento, é o núcleo do edifício — visível a partir de todos os andares, atua como eixo visual e organizador dos fluxos internos.</p>
+
+    <img src="imagens/projeto1a.png" alt="Imagem complementar 1" class="img-small">
+
+    <p>A distribuição programática é sequencial: térreo: acesso e acolhimento; 1º pavimento: piscina coberta; 2º pavimento: Administração e operacional; 3º pavimento: espaços de ginástica; 4º e 5º pavimentos: quadras esportivas (coberta e descoberta, respectivamente).</p>
+
+    <p>A opção por elementos estruturais leves — como treliças metálicas e lajes alveolares — permite vencer grandes vãos e garantir a transparência visual entre os pavimentos.</p>
+
+    <!-- BLOCO DE IMAGEM + TEXTO RESPONSIVO -->
+    <div class="imagem-com-texto">
+      <img src="imagens/projeto1b.jpg" alt="Imagem complementar 2">
+      <p>
+        A lógica de empilhamento programático responde diretamente à escassez de solo urbano e propõe um edifício que se relaciona com o entorno por meio de aberturas visuais, fluxos verticais e uma presença clara na paisagem construída do bairro.
+      </p>
+    </div>
+
+    <img src="imagens/projeto1final.jpg" alt="Imagem final" class="img-smaller">
   </main>
 
   <footer>
-    &copy; 2025 Mariana Robazzi. Todos os direitos reservados.
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
   </footer>
 </body>
 </html>
