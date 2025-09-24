@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRÊS CASAS – Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .logo-nome {
+      position: absolute;
+      left: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 800px;
+      margin: auto;
+      flex: 1;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Todas as imagens centralizadas */
+    .projeto-img,
+    .img-small,
+    .img-smaller,
+    .img-large,
+    .imagem-com-texto img {
+      display: block;
+      margin: 3rem auto;
+      height: auto;
+    }
+
+    .projeto-img {
+      width: 100%;
+    }
+
+    .img-small {
+      width: 45%;
+    }
+
+    .img-smaller {
+      width: 64%;
+    }
+
+    /* 🔹 novas classes para imagens maiores */
+    .img-large {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .imagem-com-texto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      text-align: justify;
+    }
+
+    .imagem-com-texto img {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer p {
+      text-align: center; /* força centralização no rodapé */
+      margin: 0;
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 60%; /* mais estreito e centralizado */
+    }
+
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+      .img-large {
+        width: 100%; /* em telas pequenas ocupa toda a largura */
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="logo-nome">Mariana Robazzi</span>
+    <a href="index.html">Início</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="cv.html">CV</a>
+  </nav>
+
+  <main>
+    <h1>TRÊS CASAS</h1>
+
+    <img src="imagens/projeto8.jpg" alt="Imagem de abertura" class="projeto-img">
+
+    <p>O projeto consistiu na elaboração de três residências unifamiliares térreas em um terreno com forte declividade, localizado no bairro da Saúde, na cidade do Rio de Janeiro. A área escolhida apresentava um desnível de aproximadamente 11 metros ao longo de sua extensão, o que impôs desafios significativos de implantação e estruturação. Com uma metragem máxima de 100m² por unidade, o objetivo era distribuir as casas de forma eficiente e integrada ao relevo, respeitando as condicionantes do solo e buscando soluções arquitetônicas claras e objetivas.</p>
+
+    <p>Para lidar com o desnível acentuado, optou-se por uma implantação em sequência vertical, em que cada residência ocupa um platô diferente do terreno. A estratégia principal foi utilizar a cobertura de cada casa como uma espécie de varanda/jardim para a casa imediatamente acima. Essa decisão permitiu não apenas o aproveitamento máximo do terreno, mas também a criação de áreas externas generosas e com vista, sem comprometer a privacidade entre as unidades. As casas são iguais entre si, o que reforça a racionalidade do projeto e facilita a execução em série.</p>
+
+    <!-- 🔹 imagens 8a e 8b agora maiores -->
+    <img src="imagens/projeto8a.jpg" alt="Imagem complementar 1" class="img-large">
+
+    <img src="imagens/projeto8b.jpg" alt="Imagem complementar 2" class="img-large">
+
+    <p>A organização espacial das residências foi pensada de forma a otimizar ao máximo os 100m² disponíveis. A planta foi desenhada sem corredores, o que garante um melhor aproveitamento da área interna e favorece a integração entre os ambientes. A circulação se dá de forma fluida e direta entre os espaços sociais e íntimos, promovendo praticidade no uso cotidiano. Apesar de compactas, as casas apresentam ambientes bem definidos e proporções confortáveis para uso residencial.</p>
+      
+    <p>A construção foi proposta em alvenaria convencional, com sistema estrutural simples e viável para terrenos com topografia irregular. A escolha por essa técnica leva em consideração sua ampla aplicação e adaptabilidade ao contexto urbano carioca. Todos os desenhos do projeto foram desenvolvidos manualmente, explorando a representação gráfica como ferramenta de concepção e controle espacial. Essa abordagem contribuiu para uma leitura mais intuitiva da topografia e das relações entre os volumes edificados.</p>
+
+    <!-- BLOCO DE IMAGEM + TEXTO RESPONSIVO -->
+    <div class="imagem-com-texto">
+      <img src="imagens/projeto8c.jpg" alt="Imagem complementar 3">
+      <p>A repetição das unidades e o uso inteligente da cobertura como varanda permitiram um resultado coeso e funcional. A experiência de projetar em terreno com forte declividade trouxe aprendizados importantes sobre adaptação ao sítio, modulação construtiva e racionalização espacial.</p>
+    </div>
+
+    <img src="imagens/projeto8d.jpg" alt="Imagem final" class="img-smaller">
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
