@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Esportivo – Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .logo-nome {
+      position: absolute;
+      left: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 800px;
+      margin: auto;
+      flex: 1;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Todas as imagens centralizadas */
+    .projeto-img,
+    .img-small,
+    .imagem-com-texto img {
+      display: block;
+      margin: 3rem auto;
+      height: auto;
+    }
+
+    .projeto-img {
+      width: 100%;
+    }
+
+    .img-small {
+      width: 80%;
+    }
+
+    .imagem-com-texto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      text-align: justify;
+    }
+
+    .imagem-com-texto img {
+      max-width: 400px;
+      width: 80%;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer p {
+      text-align: center;
+      margin: 0;
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 60%;
+    }
+
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+
+      .img-small,
+      .imagem-com-texto img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="logo-nome">Mariana Robazzi</span>
+    <a href="index.html">Início</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="cv.html">CV</a>
+  </nav>
+
+  <main>
+    <h1>Flutuante</h1>
+
+    <img src="imagens/projeto11.jpg" alt="Imagem de abertura" class="projeto-img">
+
+    <p>O Teatro Flutuante é resultado de um estudo espacial e estrutural desenvolvido ao longo de três semanas, com foco exclusivo na construção de uma maquete em escala 1:50. A proposta consistia na criação de uma estrutura flutuante inteiramente feita em madeira, utilizando peças modulares e explorando as possibilidades do sistema construtivo. O projeto teve como principal motivação a investigação dos encaixes e da lógica estrutural da madeira, sem apoio de representações técnicas digitais.</p>
+
+    <p>Através do processo manual e tridimensional da maquete, foram testadas articulações possíveis entre os elementos e a ocupação do espaço cênico sobre a água. O estudo propôs um teatro com organização flexível, destacando a leveza da madeira como material principal e sua capacidade de gerar formas adaptáveis. A materialização do projeto em maquete foi o principal instrumento de experimentação arquitetônica.</p>
+
+    <img src="imagens/projeto11a.jpg" alt="Imagem complementar 1" class="img-small">
+
+    <div class="imagem-com-texto">
+      <img src="imagens/projeto11b.jpg" alt="Imagem complementar 2" class="img-small">
+    </div>
+
+    <img src="imagens/projeto11c.jpg" alt="Imagem final" class="img-small">
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
