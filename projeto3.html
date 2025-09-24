@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto 3</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover; /* Mantém boa proporção */
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .nome-site {
+      font-family: var(--serif);
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+
+    .menu { display: flex; gap: 2rem; }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 1400px;
+      margin: auto;
+      flex: 1;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .intro-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 2.4rem;
+      display: block;
+    }
+
+    .text-block {
+      text-align: justify;
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+    }
+    .text-block p { margin-bottom: 0.9rem; }
+    .text-block p:last-child { margin-bottom: 0; }
+
+    .image-text-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.4rem;
+      margin-bottom: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .image-text-row img {
+      flex: 1 1 300px;
+      max-width: 300px;
+      object-fit: cover;
+    }
+
+    .image-text-row .text-block {
+      flex: 1 1 300px;
+      margin-bottom: 0;
+    }
+
+    .image-text-row .text-block p { margin-bottom: 0.8rem; }
+    .image-text-row .text-block p:last-child { margin-bottom: 0; }
+
+    .double-image-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.6rem;
+      margin: 0.8rem 0 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .double-image-row img {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 3rem;
+      text-align: center;
+      padding: 1.6rem 1rem 1.2rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    footer hr {
+      border: none; height: 1px; background-color: var(--detail1);
+      margin: 0 auto 1rem; width: 80%;
+    }
+
+    @media (max-width: 700px) {
+      main { padding: 6rem 2rem; }
+      .image-text-row, .double-image-row { flex-direction: column; }
+      .image-text-row img, .image-text-row .text-block,
+      .double-image-row img {
+        flex: 0 0 auto; width: 100%;
+        aspect-ratio: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nome-site">Mariana Robazzi</div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Azulejo</h1>
+    <img src="imagens/projeto3.jpeg" alt="Imagem principal" class="intro-image">
+
+    <div class="text-block">
+      <h2>Contexto</h2>
+      <p>No desenvolvimento do projeto, comecei pela criação de uma imagem que representasse meu bairro apenas com linhas retas, reduzindo os contornos ao essencial e traduzindo toda a composição em segmentos retos. Essa restrição formal guiou escolhas de direção, espessura e ritmo, abrindo espaço para uma leitura gráfica limpa e modular.</p>
+      <p>O objetivo era chegar a um desenho que fosse, ao mesmo tempo, fiel ao motivo original e totalmente apto a se comportar como padrão repetitivo.</p>
+    </div>
+
+    <div class="image-text-row">
+      <img src="imagens/projeto3b.jpg" alt="Imagem original e versão retilínea">
+      <div class="text-block">
+        <h2>Formação do módulo</h2>
+        <p> A partir da imagem criada, selecionei um recorte quadrado de um ângulo específico e, com ele, formei o módulo do azulejo. Testei repetições para garantir continuidade nas bordas e ausência de emendas visíveis, ajustando sobreposições e ritmos até chegar a um encaixe continuo.</p>
+      </div>
+    </div>
+
+    <div class="image-text-row">
+      <img src="imagens/projeto3c.png" alt="Separação em stencils">
+      <div class="text-block">
+        <h2>Transcrição para o tecido</h2>
+        <p> Em seguida, levei o azulejo para outro suporte: o tecido. Para isso, separei as formas por cores e transformei cada camada cromática em um <strong>stencil</strong> próprio. Essa separação garantiu registro e sobreposição controlados no momento da impressão manual.</p>
+        <p>Em paralelo, preparei as tintas a partir das cores primárias, realizando misturas até aproximá-las da referência. O teste foi feito por amostras no próprio tecido, observando secagem e absorção, para que o resultado final mantivesse contraste e legibilidade.</p>
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h2>Conclusão</h2>
+      <p>No fechamento, o azulejo deixa de ser apenas um módulo gráfico e passa a operar como linguagem aplicada: o desenho retilíneo, nascido do rigor do traço, encontra a vibração da fibra têxtil. Com stencils por cor e tintas calibradas a partir das primárias, a repetição ganha corpo e relevo, permitindo que a estética do azulejo se projete materialmente no tecido — com a mesma clareza do digital, mas acrescida das variações táteis do processo manual.</p>
+    </div>
+
+    <div class="double-image-row">
+      <img src="imagens/projeto3d.jpg" alt="Mistura das cores">
+      <img src="imagens/projeto3e.jpg" alt="Aplicação final no tecido">
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
+
