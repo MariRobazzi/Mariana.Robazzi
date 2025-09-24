@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto 4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .nome-site {
+      font-family: var(--serif);
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+
+    .menu { display: flex; gap: 2rem; }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 1400px;
+      margin: auto;
+      flex: 1;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .intro-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 2.4rem;
+      display: block;
+    }
+
+    .text-block {
+      text-align: justify;
+      line-height: 1.8;
+      margin-bottom: 2.2rem;
+    }
+    .text-block p { margin-bottom: 0.9rem; }
+    .text-block p:last-child { margin-bottom: 0; }
+
+    .image-text-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.4rem;
+      margin-bottom: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .image-text-row img {
+      flex: 1 1 300px;
+      max-width: 400px;
+      object-fit: cover;
+    }
+
+    .image-text-row .text-block {
+      flex: 1 1 300px;
+      margin-bottom: 0;
+    }
+
+    .multi-image-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.6rem;
+      margin: 1rem 0 2rem;
+      flex-wrap: wrap;
+    }
+
+    .multi-image-row img {
+      width: 30%;
+      max-width: 400px;
+      object-fit: cover;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 3rem;
+      text-align: center;
+      padding: 1.6rem 1rem 1.2rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer hr {
+      border: none; height: 1px; background-color: var(--detail1);
+      margin: 0 auto 1rem; width: 80%;
+    }
+
+    @media (max-width: 700px) {
+      main { padding: 6rem 2rem; }
+      .image-text-row, .multi-image-row { flex-direction: column; }
+      .multi-image-row img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nome-site">Mariana Robazzi</div>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>Methodology Design</h1>
+    <img src="imagens/projeto4a.jpg" alt="Imagem principal" class="intro-image">
+
+    <!-- Referências -->
+    <div class="text-block">
+      <h2>Referências</h2>
+      <p>O ponto de partida foi uma pesquisa de <strong>referências de design</strong>, que orientou tanto a linguagem estética quanto a lógica construtiva dos projetos. Entre elas estão peças como a <em>Cast Brass Chair</em> de Vincenzo De Cotiis, a <em>Stonehenge Arm Chair</em> de Vincent Dubourg, a <em>Poltrona “W/s”</em> de Alma Ebeniste. Essas obras revelaram possibilidades de equilíbrio entre peso e leveza, geometria e fluidez, funcionalidade e caráter escultórico.</p>
+    </div>
+    <div class="multi-image-row">
+      <img src="imagens/ref2.jpeg" alt="Referência 1">
+      <img src="imagens/ref1.png" alt="Referência 2">
+      <img src="imagens/ref3.jpg" alt="Referência 3">
+    </div>
+
+    <!-- Grade 8x8 e Diagramas -->
+    <div class="text-block">
+      <h2>Diagramas</h2>
+      <p>A partir dessa base conceitual, desenvolvi uma <strong>grade modular 8 × 8</strong>, utilizada como matriz para experimentar formas e proporções. Sobre essa grade, produzi uma série de diagramas, explorando diferentes configurações espaciais. Entre eles, selecionei <strong>três</strong> para aprofundar, que se tornaram o ponto de partida para os mobiliários finais.</p>
+    </div>
+     <img src="imagens/grade4.png" alt="Grade 4">
+    <div class="multi-image-row">
+      <img src="imagens/grade1.png" alt="Grade 1">
+      <img src="imagens/grade2.png" alt="Grade 2">
+      <img src="imagens/grade3.png" alt="Grade 3">
+      
+    </div>
+
+    <!-- Croquis e Maquetes -->
+    <div class="text-block">
+      <h2>Croquis e Maquetes</h2>
+      <p>Com os diagramas escolhidos, iniciei a etapa de <strong>croquis</strong>, investigando proporções, apoios e relações estruturais. Na sequência, construí <strong>maquetes físicas em escala reduzida</strong>, que permitiram compreender melhor a tridimensionalidade, ergonomia e equilíbrio de cada peça.</p>
+    </div>
+    <div class="multi-image-row">
+      <img src="imagens/croqui1.jpg" alt="Croqui 1">
+      <img src="imagens/croqui2.jpg" alt="Croqui 2">
+      <img src="imagens/croqui3.jpg" alt="Croqui 3">
+    </div>
+
+    <!-- Renderings -->
+    <div class="text-block">
+      <h2>Renderings</h2>
+      <p>A partir das maquetes, avancei para os <strong>renderings digitais</strong>, que deram materialidade aos conceitos. Neles explorei texturas, acabamentos e iluminação, aproximando os projetos de sua inserção real em um ambiente.</p>
+    </div>
+    <div class="multi-image-row">
+      <img src="imagens/render1.jpg" alt="Rendering 1">
+      <img src="imagens/render2.jpg" alt="Rendering 2">
+      <img src="imagens/render3.jpg" alt="Rendering 3">
+    </div>
+
+    <!-- Desenhos Técnicos -->
+    <div class="text-block">
+      <h2>Desenhos Técnicos</h2>
+      <p>O processo se consolidou nos <strong>desenhos técnicos</strong>, que traduziram cada mobiliário em medidas exatas e documentação construtiva, garantindo viabilidade e precisão.</p>
+    </div>
+    <div class="multi-image-row">
+      <img src="imagens/tecnico1.jpg" alt="Desenho Técnico 1">
+      <img src="imagens/tecnico2.jpg" alt="Desenho Técnico 2">
+      <img src="imagens/tecnico3.jpg" alt="Desenho Técnico 3">
+    </div>
+
+    <!-- Conclusão -->
+    <div class="text-block">
+      <h2>Conclusão</h2>
+      <p>Seguindo essa metodologia — <em>referências</em>, <em>grade 8 × 8 com diagramas</em>, <em>croquis</em>, <em>maquetes</em>, <em>renderings</em> e <em>desenhos técnicos</em> — foi possível desenvolver três propostas distintas:</p>
+      <p><strong>Suspensa</strong>: cama, leveza e tensão estrutural em apoios mínimos.<br>
+         <strong>Quattro</strong>: mesa de apoio,  marcada pela racionalidade geométrica e pela repetição modular.<br>
+         <strong>Aviatta Armchair</strong>: poltrona ampla e acolhedora, geometrica e racional.</p>
+      <p>Esses três projetos demonstram como um mesmo processo metodológico pode gerar resultados complementares, revelando o diálogo entre conceito, forma e técnica.</p>
+    </div>
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
