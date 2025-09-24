@@ -1,36 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projetos – Mariana Robazzi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .logo-nome {
+      position: absolute;
+      left: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 100%;
+      margin: auto;
+      flex: 1;
+    }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      list-style: none;
+    }
+
+    .project-item {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .project-line {
+      height: 1px;
+      background-color: var(--detail1);
+      width: 100vw;
+      margin-left: -5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-content {
+      display: grid;
+      grid-template-columns: 3rem 80px 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .project-number {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      text-align: left;
+      position: relative;
+    }
+
+    .project-thumb {
+      width: 80px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      text-align: right;
+      text-decoration: none;
+      color: var(--text);
+      transition: color 0.3s ease;
+    }
+
+    .project-title:hover {
+      color: var(--detail2);
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 80%;
+    }
+
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+      .project-content {
+        grid-template-columns: 2rem 60px 1fr;
+        gap: 1rem;
+      }
+      .project-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div><strong>Mariana Robazzi</strong></div>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="index.html#sobre">Sobre</a>
-      <a href="index.html#contato">Contato</a>
-    </nav>
-  </header>
+  <nav>
+    <span class="logo-nome">Mariana Robazzi</span>
+    <a href="index.html">Início</a>
+    <a href="cv.html">CV</a>
+  </nav>
 
   <main>
-    <h1>Projetos</h1>
-    <div class="projects-grid">
-      <a href="projeto1.html" class="project-card">
-        <img src="imagens/projeto1.jpg" alt="Projeto 1">
-        <h2>Nome do Projeto 1</h2>
-      </a>
-      <a href="projeto2.html" class="project-card">
-        <img src="imagens/projeto2.jpg" alt="Projeto 2">
-        <h2>Nome do Projeto 2</h2>
-      </a>
+    <div class="project-list">
+
+      <!-- Novo projeto inserido acima, com número 1 e link projeto11.html -->
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">1</div>
+          <img src="imagens/projeto11.jpg" alt="Projeto 11" class="project-thumb">
+          <a href="projeto11.html" class="project-title">FLUTUANTE</a>
+        </div>
+      </div>
+
+      <!-- Projetos existentes renumerados -->
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">2</div>
+          <img src="imagens/projeto1.jpg" alt="Projeto 1" class="project-thumb">
+          <a href="projeto1.html" class="project-title">Centro Esportivo Três Rios</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">3</div>
+          <img src="imagens/projeto2b.jpg" alt="Projeto 2" class="project-thumb">
+          <a href="projeto2.html" class="project-title">Oficina de Habilidades</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">4</div>
+          <img src="imagens/projeto3.jpeg" alt="Projeto 3" class="project-thumb">
+          <a href="projeto3.html" class="project-title">Azuleijo</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">5</div>
+          <img src="imagens/mobilidade.png" alt="Projeto 4" class="project-thumb">
+          <a href="projeto4.html" class="project-title">Semana Internacional 2025</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">6</div>
+          <img src="imagens/render1.jpg" alt="Projeto 5" class="project-thumb">
+          <a href="projeto5.html" class="project-title">Methodology design</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">7</div>
+          <img src="imagens/projeto6e.jpg" alt="Projeto 6" class="project-thumb">
+          <a href="projeto6.html" class="project-title">Pinturas em Porcelana</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">8</div>
+          <img src="imagens/projeto8.jpg" alt="Projeto 8" class="project-thumb">
+          <a href="projeto8.html" class="project-title">Três Casas</a>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-line"></div>
+        <div class="project-content">
+          <div class="project-number">9</div>
+          <img src="imagens/Dali1.png" alt="Projeto 9" class="project-thumb">
+          <a href="projeto9.html" class="project-title">Madonna Port Lligat</a>
+        </div>
+      </div>
+
     </div>
   </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
 
   <footer>
     &copy; 2025 Mariana Robazzi. Todos os direitos reservados.
