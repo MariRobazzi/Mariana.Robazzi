@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -129,6 +129,21 @@
       object-fit: cover;
     }
 
+    /* Ajuste para os desenhos técnicos ficarem empilhados e maiores */
+    .technical-images {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .technical-images img {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
     footer {
       width: 100%;
       margin-top: 3rem;
@@ -163,7 +178,7 @@
 
   <main>
     <h1>Methodology Design</h1>
-    <img src="imagens/projeto4a.jpg" alt="Imagem principal" class="intro-image">
+    <img src="imagens/render3.jpg" alt="Imagem principal" class="intro-image">
 
     <!-- Referências -->
     <div class="text-block">
@@ -186,7 +201,6 @@
       <img src="imagens/grade1.png" alt="Grade 1">
       <img src="imagens/grade2.png" alt="Grade 2">
       <img src="imagens/grade3.png" alt="Grade 3">
-      
     </div>
 
     <!-- Croquis e Maquetes -->
@@ -216,7 +230,7 @@
       <h2>Desenhos Técnicos</h2>
       <p>O processo se consolidou nos <strong>desenhos técnicos</strong>, que traduziram cada mobiliário em medidas exatas e documentação construtiva, garantindo viabilidade e precisão.</p>
     </div>
-    <div class="multi-image-row">
+    <div class="technical-images">
       <img src="imagens/tecnico1.jpg" alt="Desenho Técnico 1">
       <img src="imagens/tecnico2.jpg" alt="Desenho Técnico 2">
       <img src="imagens/tecnico3.jpg" alt="Desenho Técnico 3">
@@ -239,3 +253,4 @@
   </footer>
 </body>
 </html>
+
