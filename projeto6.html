@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagens – Mariana Robazzi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', serif;
+      --sans: 'Montserrat', sans-serif;
+      --bg: #ffffff;
+      --text: #411b09;
+      --detail1: #dfe1d6;
+      --detail2: #a4b2c0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid var(--detail1);
+    }
+
+    .logo-nome {
+      position: absolute;
+      left: 2rem;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    nav a {
+      font-family: var(--serif);
+      font-size: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    main {
+      padding: 9rem 5rem 4rem;
+      max-width: 1000px;
+      margin: auto;
+      flex: 1;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .imagem-grande {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 2.5rem auto;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    footer p {
+      text-align: center;
+      margin: 0;
+    }
+
+    footer hr {
+      border: none;
+      height: 1px;
+      background-color: var(--detail1);
+      margin: 0 auto 1rem;
+      width: 60%;
+    }
+
+    @media(max-width: 700px) {
+      main {
+        padding: 6rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="logo-nome">Mariana Robazzi</span>
+    <a href="index.html">Início</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="cv.html">CV</a>
+  </nav>
+
+  <main>
+    <h1>Pinturas em Porcelana</h1>
+
+    <img src="imagens/projeto6.jpg" alt="Imagem 1" class="imagem-grande">
+    <img src="imagens/projeto6a.jpg" alt="Imagem 2" class="imagem-grande">
+    <img src="imagens/projeto6b.jpg" alt="Imagem 3" class="imagem-grande">
+    <img src="imagens/projeto6c.jpg" alt="Imagem 4" class="imagem-grande">
+  </main>
+
+  <footer>
+    <hr>
+    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
