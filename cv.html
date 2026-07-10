@@ -1,125 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV – Mariana Robazzi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --serif: 'Playfair Display', serif;
-      --sans: 'Montserrat', sans-serif;
-      --bg: #ffffff;
-      --text: #411b09;
-      --detail1: #dfe1d6;
-      --detail2: #a4b2c0;
-    }
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  :root {
+    --serif: 'Playfair Display', serif;
+    --sans: 'Montserrat', sans-serif;
+    --bg: #ffffff;
+    --text: #411b09;
+    --detail1: #dfe1d6;
+    --detail2: #a4b2c0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+  .progress-bar {
+    position: fixed; top: 0; left: 0;
+    height: 3px; background: var(--detail2);
+    width: 0%; z-index: 2000; transition: width 0.1s linear;
+  }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: var(--bg);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      border-bottom: 1px solid var(--detail1);
-    }
+  nav {
+    padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--detail1);
+    position: sticky; top: 0; background: #fff; z-index: 1000;
+  }
+  .nome-site { font-family: var(--serif); font-size: 1.05rem; }
+  .menu { display: flex; gap: 2rem; }
+  nav a { font-family: var(--serif); font-size: 1rem; text-decoration: none; color: var(--text); }
 
-    .nome-site {
-      font-family: var(--serif);
-      font-size: 1rem;
-      margin-left: 1rem;
-    }
+  .layout {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 3rem 2rem 4rem;
+    gap: 2rem;
+  }
 
-    .menu {
-      display: flex;
-      gap: 2rem;
-    }
+  .side-index {
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
 
-    nav a {
-      font-family: var(--serif);
-      font-size: 1rem;
-      text-decoration: none;
-      color: var(--text);
-    }
+  .side-index a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--detail2);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-    main {
-      padding: 9rem 5rem 4rem;
-      max-width: 1000px;
-      margin: auto;
-      flex: 1;
-    }
+  .side-index .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--detail1);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
 
-    h1 {
-      font-family: var(--serif);
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
+  .side-index a.active { color: var(--text); }
+  .side-index a.active .dot {
+    background: var(--text);
+    transform: scale(1.4);
+  }
 
-    .cv-block {
-      margin-bottom: 2rem;
-    }
+  main { min-width: 0; }
 
-    .cv-block h2 {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      font-family: var(--sans);
-    }
+  h1 { font-family: var(--serif); font-size: 2.3rem; margin-bottom: 2.5rem; }
 
-    .cv-entry {
-      margin-bottom: 1.5rem;
-    }
+  section { margin-bottom: 3rem; scroll-margin-top: 5.5rem; }
 
-    .cv-entry strong {
-      font-weight: 600;
-    }
+  section h2 {
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+    font-family: var(--sans);
+    border-bottom: 1px solid var(--detail1);
+    padding-bottom: 0.5rem;
+  }
 
-    footer {
-      width: 100%;
-      margin-top: 4rem;
-      text-align: center;
-      padding: 2rem 1rem 1.5rem;
-      font-family: var(--serif);
-      font-size: 0.85rem;
-      color: var(--text);
-    }
+  .cv-entry { margin-bottom: 1.3rem; line-height: 1.7; }
+  .cv-entry strong { font-weight: 600; }
 
-    footer hr {
-      border: none;
-      height: 1px;
-      background-color: var(--detail1);
-      margin: 0 auto 1rem;
-      width: 80%;
-    }
+  .pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
 
-    @media (max-width: 700px) {
-      main {
-        padding: 6rem 2rem;
-      }
+  .pill {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid var(--detail1);
+    color: var(--text);
+  }
+
+  .pill.avancado { background: var(--text); color: #fff; border-color: var(--text); }
+  .pill.intermediario { background: var(--detail2); color: #fff; border-color: var(--detail2); }
+  .pill.basico { background: transparent; color: var(--detail2); border-color: var(--detail2); }
+
+  .lang-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--detail1);
+    font-size: 0.9rem;
+  }
+  .lang-row:last-child { border-bottom: none; }
+
+  .lang-dots { display: flex; gap: 4px; }
+  .lang-dots .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--detail1);
+  }
+  .lang-dots .dot.filled { background: var(--text); }
+
+  footer {
+    text-align: center; font-family: var(--serif); font-size: 0.85rem;
+    padding: 2rem 0 1.5rem;
+  }
+  footer hr { border: none; height: 1px; background: var(--detail1); margin: 0 auto 0.6rem; width: 60%; }
+
+  @media (max-width: 800px) {
+    .layout { grid-template-columns: 1fr; }
+    .side-index {
+      position: static;
+      flex-direction: row;
+      overflow-x: auto;
+      gap: 1.4rem;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
+  <div class="progress-bar" id="bar"></div>
+
   <nav>
     <div class="nome-site">Mariana Robazzi</div>
     <div class="menu">
@@ -129,108 +163,139 @@
     </div>
   </nav>
 
-  <main>
-    <h1>Currículo</h1>
-
-    <div class="cv-block">
-      <h2>INFORMAÇÕES</h2>
-      <div class="cv-entry">
-        <strong>MARIANA ROBAZZI</strong><br>
-        mariana.robazzi@gmail.com / +55 (11) 99640-1756 / LinkedIn: www.linkedin.com/in/mariana-robazzi
-      </div>
+  <div class="layout">
+    <div class="side-index" id="sideIndex">
+      <a href="#educacao"><span class="dot"></span>Educação</a>
+      <a href="#experiencias"><span class="dot"></span>Experiências</a>
+      <a href="#habilidades"><span class="dot"></span>Habilidades</a>
     </div>
 
-    <div class="cv-block">
-      <h2>EDUCAÇÃO</h2>
-      <div class="cv-entry">
-        <strong>Escola da Cidade</strong><br>
-        Bacharelado em Arquitetura e Urbanismo — 2023–2028<br>
-        São Paulo, Brasil
-      </div>
-      <div class="cv-entry">
-        <strong>Nuova Accademia di Belle Arti</strong><br>
-        Interior Design Semester Abroad Program — 2024<br>
-        Milão, Itália
-      </div>
-      <div class="cv-entry">
-        <strong>Colégio Bandeirantes</strong><br>
-        Ensino Médio e Fundamental — 2016–2022<br>
-        São Paulo, Brasil
-      </div>
-    </div>
+    <main>
+      <h1>Currículo</h1>
 
-    <div class="cv-block">
-  <h2>EXPERIÊNCIAS, CURSOS E CERTIFICAÇÕES</h2>
- </div>
+      <section id="informacoes">
+        <h2>INFORMAÇÕES</h2>
+        <div class="cv-entry">
+          <strong>MARIANA ROBAZZI</strong><br>
+          mariana.robazzi@gmail.com / +55 (11) 99640-1756 / LinkedIn: www.linkedin.com/in/mariana-robazzi
+        </div>
+      </section>
 
-  <div class="cv-entry">
-    <strong>Vivência acadêmica internacional – Nuova Accademia di Belle Arti (NABA), Milano</strong><br>
-    Foco em metodologias contemporâneas de Design e Interior Design, com aprendizado junto a professores nativos e atuantes no mercado europeu. Experiência marcada pelo contato com diferentes abordagens criativas, metodologias, análise crítica de projetos e ampliação de repertório cultural e técnico em ambiente internacional e interdisciplinar.
-    <div><strong>Formação e Competências em Design:</strong> estudo avançado em Design, com compreensão aprofundada de objetos e da História do Design pela Nuova Accademia di Belle Arti<</div>
-        <strong>Formação e Competências em História da Arte:</strong> Estudo aprofundado em História, com compreensão crítica das principais correntes artísticas, seus contextos históricos e impactos na prática contemporânea do design e da arquitetura da Arte pela Nuova Accademia di Belle Arti (NABA), Milão
-     </div>
+      <section id="educacao">
+        <h2>EDUCAÇÃO</h2>
+        <div class="cv-entry">
+          <strong>Escola da Cidade</strong><br>
+          Bacharelado em Arquitetura e Urbanismo — 2023–2028 · São Paulo, Brasil
+        </div>
+        <div class="cv-entry">
+          <strong>Nuova Accademia di Belle Arti</strong><br>
+          Interior Design Semester Abroad Program — 2024 · Milão, Itália
+        </div>
+        <div class="cv-entry">
+          <strong>Colégio Bandeirantes</strong><br>
+          Ensino Médio e Fundamental — 2016–2022 · São Paulo, Brasil
+        </div>
+      </section>
 
-  <div class="cv-entry">
-    <strong>Certificado de AutoCAD – Lab Ideias</strong><br>
+      <section id="experiencias">
+        <h2>EXPERIÊNCIA</h2>
+        <div class="cv-entry">
+          <strong>Studio Grapa — Arquitetura e Interiores | 2025–atual</strong><br>
+          Atuação no desenvolvimento de projetos de interiores residenciais, desde a pesquisa de referências e seleção de mobiliário, materiais, tecidos e acabamentos até a elaboração de desenhos técnicos para produção de mobiliário, apresentações e imagens. Experiência em contato com fornecedores nacionais e internacionais, solicitação e análise de orçamentos, acompanhamento de pedidos, produção, prazos e entregas, além do suporte à organização e compatibilização das diferentes etapas dos projetos.
+
+        </div>
+        <div class="cv-entry">
+          <strong>Vivência acadêmica internacional – NABA, Milano</strong><br>
+          Foco em metodologias contemporâneas de Design e Interior Design, com aprendizado junto a professores atuantes no mercado europeu, ampliando repertório cultural e técnico em ambiente internacional.
+        </div>
+      </section>
+
+      <section id="habilidades">
+        <h2>HABILIDADES TÉCNICAS</h2>
+
+        <div class="cv-entry">
+          <strong>Softwares</strong>
+          <div style="margin-top: 0.6rem;">
+            <div class="lang-row">
+              <span>AutoCAD</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+            </div>
+            <div class="lang-row">
+              <span>SketchUp</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+            </div>
+            <div class="lang-row">
+              <span>Revit</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            </div>
+            <div class="lang-row">
+              <span>Archcad</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled "></div><div class="dot"></div></div>
+            </div>
+            <div class="lang-row">
+              <span>Photoshop</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div></div>
+            </div>
+            <div class="lang-row">
+
+
+        <div class="cv-entry" style="margin-top: 1.8rem;">
+          <strong>Idiomas</strong>
+          <div style="margin-top: 0.6rem;">
+            <div class="lang-row">
+              <span>Português </span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+            </div>
+            <div class="lang-row">
+              <span>Inglês</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div>
+            </div>
+            <div class="lang-row">
+              <span>Italiano</span>
+              <div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-
-  <div class="cv-entry">
-    <strong>Certificado de Desenho Técnico – Colégio Bandeirantes (BAND)</strong><br>
-    Capacitação em representação gráfica e normas técnicas.
-  </div>
-
-  <div class="cv-entry">
-    <strong>Monitora de visitas guiadas - Prospecção de novos alunos – Colégio Bandeirantes (2023–2024)</strong><br>
-    Acompanhamento e mediação em atividades culturais e educacionais, apresentação do colégio e conversa com pais.<br>
-    Competências desenvolvidas: comunicação, problem-solving e public speaking.
-  </div>
-
-  <div class="cv-entry">
-    <strong>Curso de Pintura em Porcelana – Desligue a Mente</strong><br>
-    Experimentação artística em técnicas de pintura aplicada.
-  </div>
-
-  <div class="cv-entry">
-    <strong>Certificado IELTS – Inglês nível C1</strong><br>
-    Proficiência avançada em língua inglesa.
-  </div>
-</div>
-
-    <div class="cv-block">
-      <h2>HABILIDADES TÉCNICAS</h2>
-      <div class="cv-entry">
-        <strong>Softwares:</strong> AutoCAD (avançado), SketchUp (intermediario), Revit (básico), Rhino (básico), Photoshop (intermediário), Illustrator (intermediário), InDesign (intermediário), Ftool (intermediário), QGis (intermediário), render por colagem e Microsoft 360º<br>
-        <strong>Linguagens:</strong> HTML e CSS<br>
-        <strong>Idiomas:</strong> Português (nativo), Inglês (avançado), Espanhol (intermediário), Italiano (intermediário)<br>
-       </div>
-    </div>
-
-    <div class="cv-block">
-      <h2>PROJETOS ACADÊMICOS E AUTORAIS</h2>
-      <div class="cv-entry">
-       <strong>Projeto Arquitetônicos</strong> – Desenvolvimento de análise urbana, partido arquitetônico, estrutura metálica e acessibilidade, além de maquetes físicas e digitais.
-      </div>
-      <div class="cv-entry">
-       <strong>Projeto de Design de Mobiliário (NABA – Milano)</strong> – Aplicação de metodologias contemporâneas de Design e Interior Design. Ênfase em processos criativos, análise crítica de espaços e desenvolvimento de soluções inovadoras que integram estética, funcionalidade e experiência do usuário, ampliando repertório cultural e técnico em contexto internacional.
-      </div>
-      <div class="cv-entry">
-      <strong>Projeto de Tecnologia</strong> – Ênfase em sistemas construtivos, materiais e estrutura metálica, integrando teoria e prática em soluções arquitetônicas.
-      </div>
-      <div class="cv-entry">
-        <strong>Projeto Urbano</strong> – Intervenção no Centro de São Paulo – Estudo de pedonalização e ativação cultural, com diagnósticos sociais, históricos e infraestruturais, utilizando ferramentas como QGIS.
-      </div>
-      <div class="cv-entry">
-        <strong>Projeto Digital – Portfólio Pessoal </strong>– Codificação de website autoral responsivo em HTML, CSS e GitHub Pages para apresentação de projetos acadêmicos e profissionais.
-      </div>
-      <div class="cv-entry">
-       <strong>Análise de Obras</strong> – Estudo crítico de obras arquitetônicas e artísticas, com ênfase na interpretação formal, material e espacial. Desenvolvimento de leituras que articulam contexto histórico, social e cultural, relacionando referências a soluções projetuais.
-      </div>
-    </div>
-  </main>
 
   <footer>
     <hr>
-    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+    <p>© 2026 Mariana Robazzi — arquitetura, design e arte</p>
   </footer>
+
+  <script>
+    const bar = document.getElementById('bar');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      bar.style.width = scrolled + '%';
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.side-index a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          links.forEach(l => l.classList.remove('active'));
+          const match = document.querySelector(`.side-index a[href="#${id}"]`);
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
