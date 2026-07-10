@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projetos – Mariana Robazzi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap');
+
     :root {
       --serif: 'Playfair Display', serif;
       --sans: 'Montserrat', sans-serif;
@@ -25,22 +26,13 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: var(--bg);
       padding: 1rem 2rem;
       display: flex;
       justify-content: flex-end;
       gap: 2rem;
-      z-index: 1000;
       border-bottom: 1px solid var(--detail1);
     }
 
@@ -49,7 +41,6 @@
       left: 2rem;
       font-family: var(--serif);
       font-size: 1.1rem;
-      color: var(--text);
     }
 
     nav a {
@@ -60,100 +51,175 @@
     }
 
     main {
-      padding: 9rem 5rem 4rem;
-      max-width: 100%;
-      margin: auto;
-      flex: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
     }
 
     .project-list {
       display: flex;
       flex-direction: column;
-      gap: 5rem;
-      list-style: none;
     }
 
     .project-item {
+      border-bottom: 1px solid var(--detail1);
+      cursor: pointer;
+    }
+
+    .project-item:first-child {
+      border-top: 1px solid var(--detail1);
+    }
+
+    .project-row {
       display: flex;
-      flex-direction: column;
-      position: relative;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.3rem 0.2rem;
     }
 
-    .project-line {
-      height: 1px;
-      background-color: var(--detail1);
-      width: 100vw;
-      margin-left: -5rem;
-      margin-bottom: 1rem;
-    }
-
-    .project-content {
-      display: grid;
-      grid-template-columns: 3rem 80px 1fr;
-      gap: 2rem;
-      align-items: center;
+    .project-left {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
     }
 
     .project-number {
       font-family: var(--serif);
-      font-size: 0.9rem;
-      text-align: left;
-      position: relative;
-    }
-
-    .project-thumb {
-      width: 80px;
-      height: auto;
-      object-fit: cover;
+      font-size: 0.8rem;
+      color: var(--detail2);
+      transition: color 0.35s ease;
+      min-width: 1.6rem;
     }
 
     .project-title {
       font-family: var(--serif);
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      text-align: right;
-      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: 0.01em;
       color: var(--text);
-      transition: color 0.3s ease;
+      transition: color 0.35s ease, transform 0.35s ease;
     }
 
-    .project-title:hover {
+    .project-meta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
       color: var(--detail2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      align-self: center;
+    }
+
+    .project-item:hover .project-title {
+      color: var(--detail2);
+      transform: translateX(4px);
+    }
+
+    .project-item:hover .project-number {
+      color: var(--text);
+    }
+
+    .project-reveal {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      margin-bottom: 0;
+      transform: translateY(10px);
+
+      transition:
+        max-height 0.8s ease,
+        opacity 0.4s ease,
+        margin-bottom 0.5s ease,
+        transform 0.5s ease;
+    }
+
+    .project-item:hover .project-reveal {
+      max-height: 3000px;
+      opacity: 1;
+      margin-bottom: 1.5rem;
+      transform: translateY(0);
+    }
+
+    .reveal-placeholder {
+      width: 100%;
+      height: 240px;
+      border-radius: 2px;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem 1.2rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #ffffff;
+    }
+
+    /* Imagem menor, centralizada e proporcional */
+
+    .reveal-image {
+      width: 50%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .image-caption {
+      display: block;
+      width: 50%;
+      max-width: 500px;
+      margin: 0.7rem auto 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--text);
     }
 
     footer {
-      width: 100%;
-      margin-top: 4rem;
       text-align: center;
-      padding: 2rem 1rem 1.5rem;
       font-family: var(--serif);
       font-size: 0.85rem;
-      color: var(--text);
+      padding: 2rem 0 1.5rem;
     }
 
     footer hr {
       border: none;
       height: 1px;
-      background-color: var(--detail1);
-      margin: 0 auto 1rem;
-      width: 80%;
+      background: var(--detail1);
+      margin: 0 auto 0.6rem;
+      width: 60%;
     }
 
-    @media(max-width: 700px) {
-      main {
-        padding: 6rem 2rem;
-      }
-      .project-content {
-        grid-template-columns: 2rem 60px 1fr;
+    @media (max-width: 600px) {
+      nav {
+        padding: 1rem;
         gap: 1rem;
       }
+
+      .logo-nome {
+        left: 1rem;
+      }
+
+      main {
+        padding: 2rem 1rem 3rem;
+      }
+
       .project-title {
-        font-size: 1rem;
+        font-size: 1.15rem;
+      }
+
+      .project-meta {
+        font-size: 0.6rem;
+      }
+
+      .reveal-image,
+      .image-caption {
+        width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
+
   <nav>
     <span class="logo-nome">Mariana Robazzi</span>
     <a href="index.html">Início</a>
@@ -163,101 +229,335 @@
   <main>
     <div class="project-list">
 
-      <!-- Novo projeto inserido acima, com número 1 e link projeto11.html -->
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">1</div>
-          <img src="imagens/projeto11.jpg" alt="Projeto 11" class="project-thumb">
-          <a href="projeto11.html" class="project-title">FLUTUANTE</a>
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto9.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">01</span>
+            <span class="project-title">Mezzanotte</span>
+          </div>
+
+          <span class="project-meta">
+            Arquitetura · 2026
+          </span>
+
+        </div>
+
+        <div class="project-reveal">
+
+          <img
+            src="imagens/projeto9.png"
+            alt="Mezzanotte"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Mezzanotte — Colagem
+          </span>
+
         </div>
       </div>
 
-      <!-- Projetos existentes renumerados -->
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">2</div>
-          <img src="imagens/projeto1.jpg" alt="Projeto 1" class="project-thumb">
-          <a href="projeto1.html" class="project-title">Centro Esportivo </a>
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto8.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">02</span>
+            <span class="project-title">
+              Composição de Mobiliários
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Interiores · 2026
+          </span>
+
+        </div>
+
+        <div class="project-reveal">
+
+          <img
+            src="imagens/projeto8a.png"
+            alt="Composição de Mobiliários"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Composição de Mobiliários — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">3</div>
-          <img src="imagens/projeto2b.jpg" alt="Projeto 2" class="project-thumb">
-          <a href="projeto2.html" class="project-title">Oficina de Habilidades</a>
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto6.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">03</span>
+            <span class="project-title">
+              Projeto Salvador
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Arquitetura · 2025
+          </span>
+
+        </div>
+
+       <div class="project-reveal">
+
+          <img
+            src="imagens/projeto6b.jpeg"
+            alt="Projeto Salvador"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Projeto Salvador — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">4</div>
-          <img src="imagens/projeto3.jpeg" alt="Projeto 3" class="project-thumb">
-          <a href="projeto3.html" class="project-title">Azuleijo</a>
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto11.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">04</span>
+            <span class="project-title">
+              Flutuante
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Arquitetura · 2025
+          </span>
+
+        </div>
+<div class="project-reveal">
+
+          <img
+            src="imagens/projeto11.jpg"
+            alt="Flutuante"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Flutuante — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">5</div>
-          <img src="imagens/mobilidade.png" alt="Projeto 4" class="project-thumb">
-          <a href="projeto4.html" class="project-title">Semana Internacional 2025</a>
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto1.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">05</span>
+            <span class="project-title">
+              Centro Esportivo Três Rios
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Arquitetura · 2025
+          </span>
+
+        </div>
+
+        <div class="project-reveal">
+
+          <img
+            src="imagens/projeto1.jpg"
+            alt="Centro Esportivo Três Rios"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Centro Esportivo Três Rios — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">6</div>
-          <img src="imagens/render1.jpg" alt="Projeto 5" class="project-thumb">
-          <a href="projeto5.html" class="project-title">Methodology design</a>
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto2.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">06</span>
+            <span class="project-title">
+              Oficinas de Habilidades
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Arquitetura · 2025
+          </span>
+
+        </div>
+
+        <div class="project-reveal">
+
+          <img
+            src="imagens/projeto2a.jpg"
+            alt="Oficinas de Habilidades"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Oficinas de Habilidades — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">7</div>
-          <img src="imagens/projeto6e.jpg" alt="Projeto 6" class="project-thumb">
-          <a href="projeto6.html" class="project-title">Pinturas em Porcelana</a>
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto3.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">07</span>
+            <span class="project-title">
+              Azulejo
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Design · 2025
+          </span>
+
+        </div>
+
+       <div class="project-reveal">
+
+          <img
+            src="imagens/projeto3.jpeg"
+            alt="Azulejo"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Azulejo — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">8</div>
-          <img src="imagens/projeto8.jpg" alt="Projeto 8" class="project-thumb">
-          <a href="projeto8.html" class="project-title">Três Casas</a>
+
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto4.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">08</span>
+            <span class="project-title">
+              Semana Internacional
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Arquitetura · 2025
+          </span>
+
+        </div>
+
+        <div class="project-reveal">
+
+          <img
+            src="imagens/projeto4d.jpg"
+            alt="Semana Internacional"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Semana Internacional — padrão
+          </span>
+
         </div>
       </div>
 
-      <div class="project-item">
-        <div class="project-line"></div>
-        <div class="project-content">
-          <div class="project-number">9</div>
-          <img src="imagens/Dali1.png" alt="Projeto 9" class="project-thumb">
-          <a href="projeto9.html" class="project-title">Madonna Port Lligat</a>
+
+
+      <div
+        class="project-item"
+        onclick="window.location.href='projeto5.html'"
+      >
+        <div class="project-row">
+
+          <div class="project-left">
+            <span class="project-number">09</span>
+            <span class="project-title">
+              Methodology Design
+            </span>
+          </div>
+
+          <span class="project-meta">
+            Design · 2024
+          </span>
+
+        </div>
+
+        <div class="project-reveal">
+
+          <img
+            src="imagens/render1.jpg"
+            alt="Methodology Design"
+            class="reveal-image"
+          >
+
+          <span class="image-caption">
+            Methodology Design — padrão
+          </span>
+
         </div>
       </div>
+
 
     </div>
   </main>
 
   <footer>
     <hr>
-    <p>© 2025 Mariana Robazzi — arquitetura, design e arte<br>todos os direitos reservados</p>
+    <p>
+      © 2026 Mariana Robazzi — arquitetura, design e arte
+    </p>
   </footer>
-</body>
-</html>
 
-  <footer>
-    &copy; 2025 Mariana Robazzi. Todos os direitos reservados.
-  </footer>
 </body>
 </html>
