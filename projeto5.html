@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>19ª Semana Internacional – Mariana Robazzi</title>
+  <title>Methodology Design – Mariana Robazzi</title>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;500&display=swap"
@@ -112,7 +112,7 @@
 
     main {
       width: 100%;
-      max-width: 820px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 4rem 2rem 5rem;
 
@@ -147,19 +147,37 @@
       color: var(--detail1);
     }
 
+    h2 {
+      margin-bottom: 1rem;
+
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
     p {
-      margin-bottom: 2rem;
+      margin-bottom: 1.2rem;
 
       font-size: 0.95rem;
       font-weight: 300;
       text-align: justify;
     }
 
+    .text-block {
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .text-block p:last-child {
+      margin-bottom: 0;
+    }
+
     /* IMAGEM PRINCIPAL COM MOVIMENTO */
 
     .tilt-wrap {
       width: 100%;
-      margin: 0 auto 3rem;
+      max-width: 800px;
+      margin: 0 auto 3.5rem;
 
       perspective: 1000px;
     }
@@ -169,7 +187,7 @@
 
       width: 100%;
       height: auto;
-      max-height: 560px;
+      max-height: 620px;
       margin: 0 auto;
 
       object-fit: contain;
@@ -189,10 +207,20 @@
       opacity: 0.96;
     }
 
-    /* FIGURAS E IMAGENS */
+    /* SEÇÕES */
+
+    .project-section {
+      margin: 5rem 0;
+    }
+
+    .project-section:first-of-type {
+      margin-top: 0;
+    }
+
+    /* IMAGENS */
 
     figure {
-      margin: 3.5rem 0;
+      margin: 0;
     }
 
     .project-image {
@@ -200,7 +228,7 @@
 
       width: 100%;
       height: auto;
-      max-height: 620px;
+      max-height: 650px;
       margin: 0 auto;
 
       object-fit: contain;
@@ -218,19 +246,6 @@
       opacity: 0.96;
     }
 
-    .project-image.medium {
-      width: 78%;
-    }
-
-    .project-image.large {
-      width: 94%;
-    }
-
-    .project-image.mobility {
-      width: 70%;
-      max-width: 430px;
-    }
-
     figcaption {
       margin-top: 0.8rem;
 
@@ -242,18 +257,48 @@
       text-align: center;
     }
 
-    /* IMAGEM COM TEXTO */
+    /* TRÊS IMAGENS */
 
-    .imagem-com-texto {
-      margin: 4rem 0;
+    .triple-image-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      gap: 1.6rem;
+
+      margin-top: 2.5rem;
     }
 
-    .imagem-com-texto figure {
-      margin: 0 0 2.5rem;
+    .triple-image-row .project-image {
+      max-height: 440px;
     }
 
-    .imagem-com-texto p {
-      margin-bottom: 0;
+    /* IMAGEM ÚNICA */
+
+    .single-image {
+      width: 100%;
+      max-width: 900px;
+      margin: 2.5rem auto;
+    }
+
+    .single-image.medium {
+      max-width: 700px;
+    }
+
+    /* DESENHOS TÉCNICOS */
+
+    .technical-images {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      width: 100%;
+      max-width: 920px;
+      margin: 2.5rem auto 0;
+    }
+
+    .technical-images .project-image {
+      width: 100%;
+      max-height: none;
     }
 
     /* LIGHTBOX */
@@ -361,7 +406,7 @@
 
     /* RESPONSIVIDADE */
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       nav {
         justify-content: center;
         gap: 1.3rem;
@@ -400,15 +445,21 @@
         margin: 0;
       }
 
+      .project-section {
+        margin: 4rem 0;
+      }
+
       .tilt-img {
         max-height: none;
       }
 
-      .project-image.medium,
-      .project-image.large,
-      .project-image.mobility {
-        width: 100%;
-        max-width: none;
+      .triple-image-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .triple-image-row .project-image {
+        max-height: none;
       }
 
       .project-image:hover {
@@ -451,141 +502,383 @@
 
   <main>
 
-    <h1>19ª Semana Internacional</h1>
+    <h1>Methodology Design</h1>
 
     <p class="project-meta">
-      <span>Urbanismo e paisagem</span>
-      <span>Represa Billings, São Paulo</span>
-      <span>2025</span>
+      <span>Design de mobiliário</span>
+      <span>Processo metodológico</span>
+      <span>Projeto acadêmico</span>
     </p>
 
-    <!-- IMAGEM 1: ABERTURA -->
+    <!-- IMAGEM PRINCIPAL -->
 
     <div class="tilt-wrap">
       <img
-        src="imagens/projeto4d.jpg"
-        alt="Imagem de abertura do projeto da 19ª Semana Internacional"
+        src="imagens/render3.jpg"
+        alt="Imagem principal do projeto Methodology Design"
         class="tilt-img zoomable"
         id="tiltImg"
       >
     </div>
 
-    <p>
-      A 19ª Semana Internacional da Escola da Cidade teve como tema
-      “Campo das Águas | Espaços Públicos nas Planícies Fluviais”,
-      trazendo a discussão sobre como pensar a cidade a partir de seus
-      rios, represas e várzeas. O encontro reuniu professores,
-      pesquisadores e estudantes de diferentes países em torno de
-      reflexões sobre paisagem, urbanismo e novas formas de apropriação
-      dos territórios ligados à água.
-    </p>
+    <!-- REFERÊNCIAS -->
 
-    <!-- IMAGEM 2 -->
+    <section class="project-section">
 
-    <figure>
-      <img
-        src="imagens/projeto4a.jpg"
-        alt="Estudo da Represa Billings e de seu território"
-        class="project-image medium zoomable"
-        loading="lazy"
-      >
+      <div class="text-block">
+        <h2>Referências</h2>
 
-      <figcaption>
-        Leitura do território e das relações com a Represa Billings
-      </figcaption>
-    </figure>
+        <p>
+          O ponto de partida foi uma pesquisa de
+          <strong>referências de design</strong>, que orientou tanto a
+          linguagem estética quanto a lógica construtiva dos projetos.
+          Entre elas estão peças como a <em>Cast Brass Chair</em>, de
+          Vincenzo De Cotiis, a <em>Stonehenge Arm Chair</em>, de Vincent
+          Dubourg, e a <em>Poltrona “W/s”</em>, de Alma Ebeniste.
+          Essas obras revelaram possibilidades de equilíbrio entre peso
+          e leveza, geometria e fluidez, funcionalidade e caráter escultórico.
+        </p>
+      </div>
 
-    <p>
-      Dentro desse contexto, nosso grupo desenvolveu uma proposta situada
-      na Represa Billings, um espaço fundamental para São Paulo, mas
-      historicamente negligenciado em seu potencial de lazer, convívio e
-      cultura. Inspirados no conceito de um SESC aberto, pensamos em criar
-      um percurso que permitisse reaproximar a população da represa e
-      transformá-la em um lugar vivo, coletivo e acessível.
-    </p>
+      <div class="triple-image-row">
 
-    <!-- IMAGEM 3 -->
+        <figure>
+          <img
+            src="imagens/ref2.jpeg"
+            alt="Referência de design 1"
+            class="project-image zoomable"
+            loading="lazy"
+          >
 
-    <figure>
-      <img
-        src="imagens/projeto4b.jpg"
-        alt="Proposta de percurso público sobre a Represa Billings"
-        class="project-image medium zoomable"
-        loading="lazy"
-      >
+          <figcaption>
+            Referência de linguagem, materialidade e estrutura
+          </figcaption>
+        </figure>
 
-      <figcaption>
-        Percursos e estruturas públicas propostas sobre a água
-      </figcaption>
-    </figure>
+        <figure>
+          <img
+            src="imagens/ref1.png"
+            alt="Referência de design 2"
+            class="project-image zoomable"
+            loading="lazy"
+          >
 
-    <p>
-      O projeto partiu da ideia de estabelecer caminhos sobre a água,
-      conectando pontos da represa e possibilitando a experimentação do
-      espaço de forma direta. Esses trajetos não são apenas circulações,
-      mas infraestruturas que abrem espaço para atividades diversas:
-      esportivas, culturais, educativas ou simplesmente de contemplação.
-      Ao longo deles, propusemos equipamentos distribuídos, capazes de
-      ativar diferentes usos e de estimular a permanência.
-    </p>
+          <figcaption>
+            Referência de composição geométrica
+          </figcaption>
+        </figure>
 
-    <!-- IMAGEM 4 -->
+        <figure>
+          <img
+            src="imagens/ref3.jpg"
+            alt="Referência de design 3"
+            class="project-image zoomable"
+            loading="lazy"
+          >
 
-    <figure>
-      <img
-        src="imagens/projeto4f.png"
-        alt="Implantação dos percursos e equipamentos na Represa Billings"
-        class="project-image large zoomable"
-        loading="lazy"
-      >
+          <figcaption>
+            Referência de forma e caráter escultórico
+          </figcaption>
+        </figure>
 
-      <figcaption>
-        Implantação geral dos percursos e equipamentos
-      </figcaption>
-    </figure>
+      </div>
 
-    <!-- IMAGEM 5 + TEXTO -->
+    </section>
 
-    <section class="imagem-com-texto">
+    <!-- DIAGRAMAS -->
 
-      <figure>
+    <section class="project-section">
+
+      <div class="text-block">
+        <h2>Diagramas</h2>
+
+        <p>
+          A partir dessa base conceitual, desenvolvi uma
+          <strong>grade modular 8 × 8</strong>, utilizada como matriz
+          para experimentar formas e proporções. Sobre essa grade,
+          produzi uma série de diagramas, explorando diferentes
+          configurações espaciais. Entre eles, selecionei
+          <strong>três</strong> para aprofundar, que se tornaram o
+          ponto de partida para os mobiliários finais.
+        </p>
+      </div>
+
+      <figure class="single-image medium">
         <img
-          src="imagens/mobilidade.png"
-          alt="Diagrama de mobilidade do projeto"
-          class="project-image mobility zoomable"
+          src="imagens/grade4.png"
+          alt="Grade modular 8 por 8"
+          class="project-image zoomable"
           loading="lazy"
         >
 
         <figcaption>
-          Diagrama de mobilidade e conexão dos percursos
+          Grade modular 8 × 8 utilizada como matriz de desenvolvimento
         </figcaption>
       </figure>
 
-      <p>
-        Com isso, buscamos tornar a Represa Billings não apenas um
-        reservatório de recursos hídricos, mas também um campo público
-        de convívio. A proposta, ao dialogar com o tema da Semana
-        Internacional, reafirma a importância de reconhecer as águas
-        urbanas como protagonistas na construção de cidades mais
-        inclusivas, resilientes e integradas ao meio ambiente.
-      </p>
+      <div class="triple-image-row">
+
+        <figure>
+          <img
+            src="imagens/grade1.png"
+            alt="Diagrama selecionado 1"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Diagrama selecionado para a primeira proposta
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/grade2.png"
+            alt="Diagrama selecionado 2"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Diagrama selecionado para a segunda proposta
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/grade3.png"
+            alt="Diagrama selecionado 3"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Diagrama selecionado para a terceira proposta
+          </figcaption>
+        </figure>
+
+      </div>
 
     </section>
 
-    <!-- IMAGEM 6 -->
+    <!-- CROQUIS E MAQUETES -->
 
-    <figure>
-      <img
-        src="imagens/projeto4c.jpg"
-        alt="Imagem final da proposta para a Represa Billings"
-        class="project-image large zoomable"
-        loading="lazy"
-      >
+    <section class="project-section">
 
-      <figcaption>
-        Apropriação pública dos percursos sobre a Represa Billings
-      </figcaption>
-    </figure>
+      <div class="text-block">
+        <h2>Croquis e Maquetes</h2>
+
+        <p>
+          Com os diagramas escolhidos, iniciei a etapa de
+          <strong>croquis</strong>, investigando proporções, apoios e
+          relações estruturais. Na sequência, construí
+          <strong>maquetes físicas em escala reduzida</strong>, que
+          permitiram compreender melhor a tridimensionalidade, a ergonomia
+          e o equilíbrio de cada peça.
+        </p>
+      </div>
+
+      <div class="triple-image-row">
+
+        <figure>
+          <img
+            src="imagens/croqui1.jpg"
+            alt="Croqui e estudo da primeira proposta"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Estudos iniciais da primeira peça
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/croqui2.jpg"
+            alt="Croqui e estudo da segunda proposta"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Estudos iniciais da segunda peça
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/croqui3.jpg"
+            alt="Croqui e estudo da terceira proposta"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Estudos iniciais da terceira peça
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- RENDERINGS -->
+
+    <section class="project-section">
+
+      <div class="text-block">
+        <h2>Renderings</h2>
+
+        <p>
+          A partir das maquetes, avancei para os
+          <strong>renderings digitais</strong>, que deram materialidade
+          aos conceitos. Neles explorei texturas, acabamentos e iluminação,
+          aproximando os projetos de sua inserção real em um ambiente.
+        </p>
+      </div>
+
+      <div class="triple-image-row">
+
+        <figure>
+          <img
+            src="imagens/render1.jpg"
+            alt="Rendering da cama Suspensa"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Suspensa
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/render2.jpg"
+            alt="Rendering da mesa de apoio Quattro"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Quattro
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/render3.jpg"
+            alt="Rendering da Aviatta Armchair"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Aviatta Armchair
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- DESENHOS TÉCNICOS -->
+
+    <section class="project-section">
+
+      <div class="text-block">
+        <h2>Desenhos Técnicos</h2>
+
+        <p>
+          O processo se consolidou nos
+          <strong>desenhos técnicos</strong>, que traduziram cada
+          mobiliário em medidas exatas e documentação construtiva,
+          garantindo viabilidade e precisão.
+        </p>
+      </div>
+
+      <div class="technical-images">
+
+        <figure>
+          <img
+            src="imagens/tecnico1.jpg"
+            alt="Desenho técnico da primeira peça"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Desenho técnico da cama Suspensa
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/tecnico2.jpg"
+            alt="Desenho técnico da segunda peça"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Desenho técnico da mesa Quattro
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="imagens/tecnico3.jpg"
+            alt="Desenho técnico da terceira peça"
+            class="project-image zoomable"
+            loading="lazy"
+          >
+
+          <figcaption>
+            Desenho técnico da Aviatta Armchair
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- CONCLUSÃO -->
+
+    <section class="project-section">
+
+      <div class="text-block">
+        <h2>Conclusão</h2>
+
+        <p>
+          Seguindo essa metodologia — <em>referências</em>,
+          <em>grade 8 × 8 com diagramas</em>, <em>croquis</em>,
+          <em>maquetes</em>, <em>renderings</em> e
+          <em>desenhos técnicos</em> — foi possível desenvolver
+          três propostas distintas:
+        </p>
+
+        <p>
+          <strong>Suspensa:</strong> cama marcada pela leveza e pela
+          tensão estrutural em apoios mínimos.
+          <br><br>
+
+          <strong>Quattro:</strong> mesa de apoio caracterizada pela
+          racionalidade geométrica e pela repetição modular.
+          <br><br>
+
+          <strong>Aviatta Armchair:</strong> poltrona ampla e acolhedora,
+          de linguagem geométrica e racional.
+        </p>
+
+        <p>
+          Esses três projetos demonstram como um mesmo processo metodológico
+          pode gerar resultados complementares, revelando o diálogo entre
+          conceito, forma e técnica.
+        </p>
+      </div>
+
+    </section>
 
   </main>
 
